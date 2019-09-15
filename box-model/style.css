@@ -1,0 +1,47 @@
+body{
+    margin: 0;
+    background: #eeeeee;
+    color: #eeeeee;
+}
+
+.principal{
+    background: #222831;
+    height: 200px;
+}
+
+.box{
+    background: #00adb5;
+    
+    margin-left: 1%;
+    margin-top: -50px;
+    
+    float: left;
+    width: 32%;
+    padding: 10px;
+    height: 150px;
+    
+    /*Para ajustar os espaçamentos dos blocos:*/
+    box-sizing: border-box;
+}
+
+.content{
+    background: #393e46;
+
+    float: left;
+    width: 100%;
+    height: 430px;
+
+    margin-top: 10px;
+}
+
+.news{
+    background: #00adb5;
+
+    margin-left: 2%;
+    margin-top: 2%;
+    float: left;
+    width: 47%;
+    height: 120px;
+
+
+}
