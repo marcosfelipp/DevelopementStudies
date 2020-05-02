@@ -1,0 +1,41 @@
+*{
+    border: 0px;
+}
+
+body{
+    background-color: aquamarine;
+}
+
+.wrapper {
+    width: 500px;
+    display: grid;
+    background-color: blue;
+    grid-template-columns:  2fr 5fr 1fr;
+    grid-template-rows: 100px 50px 50px 100px 80px;
+}
+
+
+.item1{
+    background-color: rosybrown;
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+
+.item8{
+    background-color: brown;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    
+}
+
+.item4{
+    grid-row-start: 3;
+    grid-row-end: 5;
+    background-color: seagreen;
+}
+
+.item2{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    background-color: saddlebrown;
+}
