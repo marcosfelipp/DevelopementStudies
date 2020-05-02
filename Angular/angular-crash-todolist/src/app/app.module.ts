@@ -11,7 +11,8 @@ import { HeaderComponent } from './components/layout/header/header.component';
 import { AddTodoComponent } from './components/add-todo/add-todo.component';
 import { AboutComponent } from './components/pages/about/about.component';
 
-@NgModule({
+@NgModule({ 
+  //Metadatas:
   declarations: [
     AppComponent,
     TodosComponent,
@@ -27,6 +28,6 @@ import { AboutComponent } from './components/pages/about/about.component';
     FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent] // Principal component (instantiate on run app)
 })
 export class AppModule { }

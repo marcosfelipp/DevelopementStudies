@@ -1,7 +1,7 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-add-todo',
+  selector: 'app-add-todo', //Tag name in HTML
   templateUrl: './add-todo.component.html',
   styleUrls: ['./add-todo.component.css']
 })

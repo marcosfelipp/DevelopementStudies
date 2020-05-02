@@ -1,3 +1,7 @@
+/Django
+
+*pyc
+
 .DS_STORE
 
 /dist/
