@@ -1,2 +1,3 @@
-# WEBDeveloperStudy
-Repositório de estudos de tecnologias web
+# DevelopmentStudies
+
+Repositório de estudos de tecnologias
