@@ -49,3 +49,6 @@ yarn-error.log
 baseline.json
 
 package-lock.json
+
+env/
+flaskner.egg-info/
