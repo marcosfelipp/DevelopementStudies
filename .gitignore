@@ -52,3 +52,4 @@ package-lock.json
 
 env/
 flaskner.egg-info/
+*.db
