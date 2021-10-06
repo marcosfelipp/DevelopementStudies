@@ -1,17 +1,14 @@
-from market import app
 from flask import render_template, redirect, url_for, flash, request
+from market.ext.database import db
 from market.models import Item, User
-from market.forms import RegisterForm, LoginForm, PurchaseItemForm, SellItemForm
-from market import db
+from market.blueprint.webui.forms import RegisterForm, LoginForm, PurchaseItemForm, SellItemForm
 from flask_login import login_user, logout_user, login_required, current_user
 
 
-@app.route('/')
 def home_page():
     return render_template('index.html')
 
 
-@app.route('/market', methods=['GET', 'POST'])
 @login_required
 def market_page():
     purchase_form = PurchaseItemForm()
@@ -35,14 +32,13 @@ def market_page():
             else:
                 flash(f"Something went wrong with selling {s_item_object.name}", category='danger')
 
-        return redirect(url_for('market_page'))
+        return redirect(url_for('webui.market_page'))
     if request.method == 'GET':
         items = Item.query.filter_by(owner=None)
         owned_items = Item.query.filter_by(owner=current_user.id)
         return render_template('market.html', items=items, purchase_form=purchase_form, owned_items=owned_items, selling_form= selling_form)
 
 
-@app.route('/register', methods=['GET', 'POST'])
 def register_page():
     form = RegisterForm()
     if form.validate_on_submit():
@@ -54,7 +50,7 @@ def register_page():
         login_user(user_to_create)
         flash(f'Account created successfully!', category='success')
 
-        return redirect(url_for('market_page'))
+        return redirect(url_for('webui.market_page'))
     if form.errors != {}:
         for err_msg in form.errors.values():
             flash(err_msg, category='danger')
@@ -62,7 +58,6 @@ def register_page():
     return render_template('register.html', form=form)
 
 
-@app.route('/login', methods=['GET', 'POST'])
 def login_page():
     form = LoginForm()
     if form.validate_on_submit():
@@ -70,15 +65,14 @@ def login_page():
         if attempted_user and attempted_user.check_password_correction(attempted_password=form.password.data):
             login_user(attempted_user)
             flash(f'Success! User: {attempted_user.username}', category='success')
-            return redirect(url_for('market_page'))
+            return redirect(url_for('webui.market_page'))
         else:
             flash('Username and password are not match!', category='danger')
 
     return render_template('login.html', form=form)
 
 
-@app.route('/logout')
 def logout_page():
     logout_user()
     flash("You have been logged out!", category='info')
-    return redirect(url_for('home_page'))
+    return redirect(url_for('webui.home_page'))

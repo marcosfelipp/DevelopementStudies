@@ -1,0 +1,9 @@
+[default]
+TITLE = "Developer Market"
+EXTENSIONS = [
+    "market.ext.database",
+    "market.ext.encrypt",
+    "market.ext.login",
+    "market.blueprint.webui",
+    "market.ext.create_db"
+]

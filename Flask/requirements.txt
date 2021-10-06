@@ -5,3 +5,4 @@ wtforms
 email_validator
 flask_bcrypt
 flask_login
+dynaconf

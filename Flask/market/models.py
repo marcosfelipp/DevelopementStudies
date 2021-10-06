@@ -1,6 +1,7 @@
-from market import db, login_manager
 from flask_login import UserMixin
-from market import bcrypt
+from market.ext.database import db
+from market.ext.encrypt import bcrypt
+from market.ext.login import login_manager
 
 
 @login_manager.user_loader
